@@ -43,6 +43,7 @@ let nextRound = () => {
     document.body.querySelector("h1").textContent = "Correct! Press Next Round to continue"
 }
 let check = (a, b) => {
-    a.length === b.length &&
-    a.every((v, i) => v === b[i]); // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
+    if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
+        nextRound();
+    }    
 }
