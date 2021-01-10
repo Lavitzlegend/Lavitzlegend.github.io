@@ -17,7 +17,6 @@ document.querySelector("#begin").addEventListener("click", function(e) {
     else if (color == 4) {
         simonArr.push("blue");
     }
-    document.querySelector("#begin").textContent = "Next Round";
     console.log(simonArr);
 })
 
@@ -44,8 +43,14 @@ let nextRound = () => {
 }
 let check = (a, b) => {
     if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
+        document.querySelector("#begin").textContent = "Next Round";
         nextRound();
+    }
+    else {
+        document.body.querySelector("h1").textContent = "Incorrect. Please refresh page to start over"
     }    
 }
 
-check(simonArr, playerArr);
+document.querySelector("#check").addEventListener("click", function(e) {
+    check(simonArr, playerArr);
+})
