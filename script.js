@@ -42,6 +42,7 @@ document.querySelector("#blue").addEventListener("click", function(e) {
 let nextRound = () => {
     document.body.querySelector("h1").textContent = "Correct! Press Next Round to continue"
 }
-if (equals(simonArr, playerArr)) {
-    console.log("match");
+let check = (a, b) => {
+    a.length === b.length &&
+    a.every((v, i) => v === b[i]); // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
 }
