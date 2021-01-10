@@ -47,3 +47,5 @@ let check = (a, b) => {
         nextRound();
     }    
 }
+
+check(simonArr, playerArr);

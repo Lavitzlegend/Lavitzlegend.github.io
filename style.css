@@ -3,7 +3,7 @@ h1 {
 }
 .heading {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 0 0 10px 0;
 }
 .squares {
@@ -75,3 +75,11 @@ body {
     display: flex;
     justify-content: center;
 }
+#check {
+    height: 30px;
+    width: 150px;
+    background-color: orange;
+    border: 2px black solid;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 0 0 20px 0;
