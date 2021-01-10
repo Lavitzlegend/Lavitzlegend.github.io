@@ -1,0 +1,47 @@
+let count = 0;
+const simonArr = [];
+let playerArr = [];
+
+document.querySelector("#begin").addEventListener("click", function(e) {
+    playerArr = [];
+    let color = Math.floor(Math.random() * 4) + 1;
+    if (color == 1) {
+        simonArr.push("green");
+    }
+    else if (color == 2) {
+        simonArr.push("red");
+    }
+    else if (color == 3) {
+        simonArr.push("yellow");
+    }
+    else if (color == 4) {
+        simonArr.push("blue");
+    }
+    document.querySelector("#begin").textContent = "Next Round";
+    console.log(simonArr);
+})
+
+
+document.querySelector("#green").addEventListener("click", function(e) {
+    console.log(playerArr);
+    playerArr.push("green");
+})
+document.querySelector("#red").addEventListener("click", function(e) {
+    console.log(playerArr);
+    playerArr.push("red");
+})
+document.querySelector("#yellow").addEventListener("click", function(e) {
+    console.log(playerArr);
+    playerArr.push("yellow");
+})
+document.querySelector("#blue").addEventListener("click", function(e) {
+    console.log(playerArr);
+    playerArr.push("blue");
+})
+
+let nextRound = () => {
+    document.body.querySelector("h1").textContent = "Correct! Press Next Round to continue"
+}
+if (equals(simonArr, playerArr)) {
+    console.log("match");
+}

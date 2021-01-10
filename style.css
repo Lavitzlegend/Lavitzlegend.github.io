@@ -60,7 +60,7 @@ body {
 }
 #begin {
     height: 30px;
-    width: 70px;
+    width: 150px;
     background-color: lightgreen;
     border: 2px black solid;
     border-radius: 5px;
