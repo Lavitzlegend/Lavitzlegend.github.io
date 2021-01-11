@@ -79,18 +79,32 @@ let nextRound = () => {
 }
 
 let check = (a, b) => {
+    let notEqual = "true";
     if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
         document.querySelector("h1").textContent = "Correct!";
         document.querySelector("h1").classList.remove("hideshow");
         let winWait = setTimeout(function() {
             nextRound();
         }, 500);
+        notEqual = "false"
     } 
-    else if (a.length === b.length && a.every((v, i) => v !== b[i])) {
-        document.querySelector("h1").textContent = "Incorrect. Start Over"
-        document.querySelector("h1").classList.remove("hideshow");
-        document.querySelector("#begin").textContent = "Retry";
-        document.querySelector("#begin").style.backgroundColor = "orange";
-    }    
+    else if (a.length === b.length && notEqual === "true") {
+        // for (let i = 0; i < simonArr.length; i++) {
+        //     if (simonArr[i] === playerArr[i]) {
+        //         i++
+        //     }
+        //     else {
+                document.querySelector("h1").textContent = "Incorrect. Start Over"
+                document.querySelector("h1").classList.remove("hideshow");
+                document.querySelector("#begin").textContent = "Retry";
+                document.querySelector("#begin").style.backgroundColor = "orange";
+        //     }
+        // }
+    }
+        // document.querySelector("h1").textContent = "Incorrect. Start Over"
+        // document.querySelector("h1").classList.remove("hideshow");
+        // document.querySelector("#begin").textContent = "Retry";
+        // document.querySelector("#begin").style.backgroundColor = "orange";
+    // }    
 }
 
