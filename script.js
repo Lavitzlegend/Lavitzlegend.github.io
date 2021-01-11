@@ -42,32 +42,16 @@ let nextRound = () => {
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
         simonArr.push("green");
-        // setTimeout(function() {
-        //     audio1.play();
-        // }, 500);
     }
     else if (color == 2) {
         simonArr.push("red");
-        // setTimeout(function() {
-        //     audio2.play();
-        // }, 500);
     }
     else if (color == 3) {
         simonArr.push("yellow");
-        // setTimeout(function() {
-        //     audio3.play();
-        // }, 500);
     }
     else if (color == 4) {
         simonArr.push("blue");
-        // setTimeout(function() {
-        //     audio4.play();
-        // }, 700);
     }
-    // document.querySelector("#green").style.backgroundColor = "white";
-    // document.querySelector("#red").style.backgroundColor = "white";
-    // document.querySelector("#yellow").style.backgroundColor = "white";
-    // document.querySelector("#blue").style.backgroundColor = "white";
     let index = 0;
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
         if (index < simonArr.length) {
@@ -87,16 +71,10 @@ let nextRound = () => {
                 document.querySelector(".simon").style.backgroundColor = simonArr[index];
                 audio3.play();
             }
-            // document.querySelector(".simon").style.backgroundColor = simonArr[index];
             let whiteInterval = setTimeout(function() {
                 document.querySelector(".simon").style.backgroundColor = "white";
             }, 700);
             index++
-            // document.querySelector(`#${simonArr[index]}`).style.backgroundColor = simonArr[index];
-            // let whiteInterval = setTimeout(function() {
-            //     document.querySelector(`#${simonArr[index]}`).style.backgroundColor = "white";
-            //     }, 200);
-            // index++
         }
         else if (index == simonArr.length) {
             clearInterval(interval);
