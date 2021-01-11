@@ -1,8 +1,8 @@
 let simonArr = [];
 let playerArr = [];
 const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
-const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
-const audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+const audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
 const audio4 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")
 
 // Initial start button functionality
@@ -42,19 +42,27 @@ let nextRound = () => {
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
         simonArr.push("green");
-        audio1.play();
+        setTimeout(function() {
+            audio1.play();
+        }, 500);
     }
     else if (color == 2) {
         simonArr.push("red");
-        audio2.play();
+        setTimeout(function() {
+            audio2.play();
+        }, 500);
     }
     else if (color == 3) {
         simonArr.push("yellow");
-        audio3.play();
+        setTimeout(function() {
+            audio3.play();
+        }, 500);
     }
     else if (color == 4) {
         simonArr.push("blue");
-        audio4.play();
+        setTimeout(function() {
+            audio4.play();
+        }, 500);
     }
     
     let index = 0;
@@ -62,7 +70,7 @@ let nextRound = () => {
         document.querySelector(".simon").style.backgroundColor = simonArr[index++];
         let whiteInterval = setTimeout(function() {
             document.querySelector(".simon").style.backgroundColor = "white";
-        }, 500);
+        }, 700);
         if (index == simonArr.length) {
             clearInterval(interval);
         }
@@ -77,10 +85,12 @@ let check = (a, b) => {
         let winWait = setTimeout(function() {
             nextRound();
         }, 500);
-    }
-    else if (a.length === b.length && a.every((v, i) => v != b[i])) {
-        document.querySelector("h1").textContent = "Incorrect. Please refresh page to start over"
+    } 
+    else if (a.length === b.length && a.every((v, i) => v !== b[i])) {
+        document.querySelector("h1").textContent = "Incorrect. Start Over"
         document.querySelector("h1").classList.remove("hideshow");
+        document.querySelector("#begin").textContent = "Retry";
+        document.querySelector("#begin").style.backgroundColor = "orange";
     }    
 }
 
