@@ -1,11 +1,12 @@
-let count = 0;
 const simonArr = [];
 let playerArr = [];
 
+// Initial start button functionality
 document.querySelector("#begin").addEventListener("click", function(e) {
     nextRound();
 })
 
+// Color buttons functionality
 document.querySelector("#green").addEventListener("click", function(e) {
     playerArr.push("green");
     check(simonArr, playerArr);
@@ -23,6 +24,7 @@ document.querySelector("#blue").addEventListener("click", function(e) {
     check(simonArr, playerArr);
 })
 
+// Next Round and Check function definitions
 let nextRound = () => {
     document.querySelector("#begin").textContent = "playing...";
     document.querySelector("#begin").style.backgroundColor = "white";
