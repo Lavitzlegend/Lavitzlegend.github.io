@@ -3,7 +3,7 @@ const simonArr = [];
 let playerArr = [];
 
 document.querySelector("#begin").addEventListener("click", function(e) {
-    document.body.querySelector("h1").classList.add("hideshow");
+    document.querySelector("h1").classList.add("hideshow");
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
@@ -40,7 +40,7 @@ document.querySelector("#blue").addEventListener("click", function(e) {
 })
 
 let nextRound = () => {
-    document.body.querySelector("h1").textContent = "Correct! Press Next Round to continue"
+    document.querySelector("h1").textContent = "Correct! Press Next Round to continue"
 }
 let check = (a, b) => {
     if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
@@ -48,11 +48,11 @@ let check = (a, b) => {
         nextRound();
     }
     else {
-        document.body.querySelector("h1").textContent = "Incorrect. Please refresh page to start over"
+        document.querySelector("h1").textContent = "Incorrect. Please refresh page to start over"
     }    
 }
 
 document.querySelector("#check").addEventListener("click", function(e) {
-    document.body.querySelector("h1").classList.remove("hideshow");
+    document.querySelector("h1").classList.remove("hideshow");
     check(simonArr, playerArr);
 })
