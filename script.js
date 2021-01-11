@@ -3,7 +3,7 @@ const simonArr = [];
 let playerArr = [];
 
 document.querySelector("#begin").addEventListener("click", function(e) {
-    document.querySelector("#begin").textContent = ""
+    document.body.querySelector("h1").textContent = ""
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
