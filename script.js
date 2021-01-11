@@ -1,9 +1,9 @@
 let simonArr = [];
 let playerArr = [];
-const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3") // Figured out how to add sounds from here https://stackoverflow.com/questions/9419263/how-to-play-audio
-const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3") // found some free hosted mp3s from the medium article https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
-const audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
-const audio4 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")
+const audio0 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3") // Figured out how to add sounds from here https://stackoverflow.com/questions/9419263/how-to-play-audio
+const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3") // found some free hosted mp3s from the medium article https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
+const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
+const audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")
 
 // Initial start button functionality
 document.querySelector("#begin").addEventListener("click", function(e) {
@@ -14,22 +14,22 @@ document.querySelector("#begin").addEventListener("click", function(e) {
 // Color buttons functionality
 document.querySelector("#green").addEventListener("click", function(e) {
     playerArr.push("green");
-    audio1.play();
+    audio0.play();
     check(simonArr, playerArr);
 })
 document.querySelector("#red").addEventListener("click", function(e) {
     playerArr.push("red");
-    audio2.play();
+    audio1.play();
     check(simonArr, playerArr);
 })
 document.querySelector("#yellow").addEventListener("click", function(e) {
     playerArr.push("yellow");
-    audio3.play();
+    audio2.play();
     check(simonArr, playerArr);
 })
 document.querySelector("#blue").addEventListener("click", function(e) {
     playerArr.push("blue");
-    audio4.play();
+    audio3.play();
     check(simonArr, playerArr);
 })
 
@@ -42,40 +42,74 @@ let nextRound = () => {
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
         simonArr.push("green");
-        setTimeout(function() {
-            audio1.play();
-        }, 500);
+        // setTimeout(function() {
+        //     audio1.play();
+        // }, 500);
     }
     else if (color == 2) {
         simonArr.push("red");
-        setTimeout(function() {
-            audio2.play();
-        }, 500);
+        // setTimeout(function() {
+        //     audio2.play();
+        // }, 500);
     }
     else if (color == 3) {
         simonArr.push("yellow");
-        setTimeout(function() {
-            audio3.play();
-        }, 500);
+        // setTimeout(function() {
+        //     audio3.play();
+        // }, 500);
     }
     else if (color == 4) {
         simonArr.push("blue");
-        setTimeout(function() {
-            audio4.play();
-        }, 700);
+        // setTimeout(function() {
+        //     audio4.play();
+        // }, 700);
     }
-    
+    // document.querySelector("#green").style.backgroundColor = "white";
+    // document.querySelector("#red").style.backgroundColor = "white";
+    // document.querySelector("#yellow").style.backgroundColor = "white";
+    // document.querySelector("#blue").style.backgroundColor = "white";
     let index = 0;
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
-        document.querySelector(".simon").style.backgroundColor = simonArr[index++];
-        let whiteInterval = setTimeout(function() {
-            document.querySelector(".simon").style.backgroundColor = "white";
-        }, 700);
-        if (index == simonArr.length) {
+        if (index < simonArr.length) {
+            if (simonArr[index] === "green") {
+                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                audio0.play();
+            }
+            else if (simonArr[index] === "red") {
+                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                audio1.play();
+            }
+            else if (simonArr[index] === "yellow") {
+                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                audio2.play();
+            }
+            else if (simonArr[index] === "blue") {
+                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                audio3.play();
+            }
+            // document.querySelector(".simon").style.backgroundColor = simonArr[index];
+            let whiteInterval = setTimeout(function() {
+                document.querySelector(".simon").style.backgroundColor = "white";
+            }, 700);
+            index++
+            // document.querySelector(`#${simonArr[index]}`).style.backgroundColor = simonArr[index];
+            // let whiteInterval = setTimeout(function() {
+            //     document.querySelector(`#${simonArr[index]}`).style.backgroundColor = "white";
+            //     }, 200);
+            // index++
+        }
+        else if (index == simonArr.length) {
             clearInterval(interval);
         }
     }, 1000);
     console.log(simonArr);
+    // let reColor = setTimeout(function() {
+    //     document.querySelector("#green").style.backgroundColor = "green";
+    //     document.querySelector("#red").style.backgroundColor = "red";
+    //     document.querySelector("#yellow").style.backgroundColor = "yellow";
+    //     document.querySelector("#blue").style.backgroundColor = "blue";
+    // }, (1300 * (simonArr.length)));
+    
 }
 
 let check = (a, b) => {
@@ -93,6 +127,6 @@ let check = (a, b) => {
                 document.querySelector("h1").classList.remove("hideshow");
                 document.querySelector("#begin").textContent = "Retry";
                 document.querySelector("#begin").style.backgroundColor = "orange";
-    }   
+    }
 }
 
