@@ -18,28 +18,18 @@ document.querySelector("#begin").addEventListener("click", function(e) {
     else if (color == 4) {
         simonArr.push("blue");
     }
-    // for (let i = 0; i < simonArr.length; i++) {
-    //     setInterval(function () {
-    //         document.querySelector(".simon").style.backgroundColor = simonArr[i];
-    //     }, 1000);
-    // }
+    
     let index = 0;
+    
     let interval = setInterval(function() {
         document.querySelector(".simon").style.backgroundColor = simonArr[index++];
-        console.log(index);
+        let whiteInterval = setTimeout(function() {
+            document.querySelector(".simon").style.backgroundColor = "white";
+        }, 500);
         if (index == simonArr.length) {
             clearInterval(interval);
-            let whiteInterval = setInterval(function() {
-                document.querySelector(".simon").style.backgroundColor = "white";
-            }, 1000);
         }
-
     }, 1000);
-    // let length = (simonArr.length) * 1000;
-    // let whiteInterval = setInterval(function() {
-    //     document.querySelector(".simon").style.backgroundColor = "white";
-    // }, length);
-    
     console.log(simonArr);
 })
 
