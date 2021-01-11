@@ -52,6 +52,27 @@ let nextRound = () => {
     else if (color == 4) {
         simonArr.push("blue");
     }
+
+    // document.querySelector("#green").removeEventListener("click", function(e) {
+    //     playerArr.push("green");
+    //     audio0.play();
+    //     check(simonArr, playerArr);
+    // })
+    // document.querySelector("#red").removeEventListener("click", function(e) {
+    //     playerArr.push("red");
+    //     audio1.play();
+    //     check(simonArr, playerArr);
+    // })
+    // document.querySelector("#yellow").removeEventListener("click", function(e) {
+    //     playerArr.push("yellow");
+    //     audio2.play();
+    //     check(simonArr, playerArr);
+    // })
+    // document.querySelector("#blue").removeEventListener("click", function(e) {
+    //     playerArr.push("blue");
+    //     audio3.play();
+    //     check(simonArr, playerArr);
+    // })
     let index = 0;
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
         if (index < simonArr.length) {
@@ -80,14 +101,7 @@ let nextRound = () => {
             clearInterval(interval);
         }
     }, 1000);
-    console.log(simonArr);
-    // let reColor = setTimeout(function() {
-    //     document.querySelector("#green").style.backgroundColor = "green";
-    //     document.querySelector("#red").style.backgroundColor = "red";
-    //     document.querySelector("#yellow").style.backgroundColor = "yellow";
-    //     document.querySelector("#blue").style.backgroundColor = "blue";
-    // }, (1300 * (simonArr.length)));
-    
+    console.log(simonArr);    
 }
 
 let check = (a, b) => {
