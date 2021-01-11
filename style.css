@@ -53,11 +53,6 @@ body {
     height: 50px;
     margin: 0 0 20px 0;
 }
-.randomcolor {
-    display: flex;
-    justify-content: center;
-    margin: 0 0 20px 0;
-}
 #begin {
     height: 30px;
     width: 150px;
@@ -66,10 +61,6 @@ body {
     border-radius: 5px;
     font-size: 20px;
     margin: 0 0 20px 0;
-}
-.simontitle {
-    display: flex;
-    justify-content: center;
 }
 .player {
     display: flex;
