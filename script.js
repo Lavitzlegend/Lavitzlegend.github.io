@@ -35,20 +35,28 @@ document.querySelector("#begin").addEventListener("click", function(e) {
 
 
 document.querySelector("#green").addEventListener("click", function(e) {
-    console.log(playerArr);
+    // console.log(playerArr);
     playerArr.push("green");
+    check(simonArr, playerArr);
+    document.querySelector("#begin").style.color = "lightgreen";
 })
 document.querySelector("#red").addEventListener("click", function(e) {
-    console.log(playerArr);
+    // console.log(playerArr);
     playerArr.push("red");
+    check(simonArr, playerArr);
+    document.querySelector("#begin").style.color = "lightgreen";
 })
 document.querySelector("#yellow").addEventListener("click", function(e) {
-    console.log(playerArr);
+    // console.log(playerArr);
     playerArr.push("yellow");
+    check(simonArr, playerArr);
+    document.querySelector("#begin").style.color = "lightgreen";
 })
 document.querySelector("#blue").addEventListener("click", function(e) {
-    console.log(playerArr);
+    // console.log(playerArr);
     playerArr.push("blue");
+    check(simonArr, playerArr);
+    document.querySelector("#begin").style.color = "lightgreen";
 })
 
 let nextRound = () => {
@@ -56,7 +64,7 @@ let nextRound = () => {
 }
 let check = (a, b) => {
     if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
-        document.querySelector("#begin").textContent = "Next Round";
+        document.querySelector("h1").textContent = "Correct!";
         nextRound();
     }
     else {
