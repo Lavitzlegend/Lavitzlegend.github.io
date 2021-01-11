@@ -1,7 +1,7 @@
 let simonArr = [];
 let playerArr = [];
-const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
-const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3") // Figured out how to add sounds from here https://stackoverflow.com/questions/9419263/how-to-play-audio
+const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3") // found some free hosted mp3s from the medium article https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
 const audio3 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
 const audio4 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3")
 
@@ -62,7 +62,7 @@ let nextRound = () => {
         simonArr.push("blue");
         setTimeout(function() {
             audio4.play();
-        }, 500);
+        }, 700);
     }
     
     let index = 0;
