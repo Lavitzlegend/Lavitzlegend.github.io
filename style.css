@@ -20,7 +20,7 @@ h1 {
     border: black solid;
     border-radius: 150px;
     overflow: auto;
-    margin: 0 47px 0 47px;
+    margin: 100px 47px 0 47px;
 }
 body {
     max-width: 308px;
@@ -75,18 +75,6 @@ body {
     display: flex;
     justify-content: center;
 }
-#check {
-    height: 30px;
-    width: 150px;
-    background-color: orange;
-    border: 2px black solid;
-    border-radius: 5px;
-    font-size: 20px;
-    margin: 0 0 20px 0;
-}
 .hideshow {
     color: white;
-}
-.hidecolor {
-    background-color: white;
 }

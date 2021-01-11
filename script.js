@@ -11,6 +11,9 @@ document.querySelector("#begin").addEventListener("click", function(e) {
     nextRound();
 })
 
+
+
+
 // Color buttons functionality
 document.querySelector("#green").addEventListener("click", function(e) {
     playerArr.push("green");
@@ -33,6 +36,9 @@ document.querySelector("#blue").addEventListener("click", function(e) {
     check(simonArr, playerArr);
 })
 
+
+
+
 // Next Round and Check function definitions
 let nextRound = () => {
     document.querySelector("#begin").textContent = "playing...";
@@ -53,51 +59,56 @@ let nextRound = () => {
         simonArr.push("blue");
     }
 
-    // document.querySelector("#green").removeEventListener("click", function(e) {
-    //     playerArr.push("green");
-    //     audio0.play();
-    //     check(simonArr, playerArr);
-    // })
-    // document.querySelector("#red").removeEventListener("click", function(e) {
-    //     playerArr.push("red");
-    //     audio1.play();
-    //     check(simonArr, playerArr);
-    // })
-    // document.querySelector("#yellow").removeEventListener("click", function(e) {
-    //     playerArr.push("yellow");
-    //     audio2.play();
-    //     check(simonArr, playerArr);
-    // })
-    // document.querySelector("#blue").removeEventListener("click", function(e) {
-    //     playerArr.push("blue");
-    //     audio3.play();
-    //     check(simonArr, playerArr);
-    // })
+    document.querySelector("#green").style.backgroundColor = "white";
+    document.querySelector("#red").style.backgroundColor = "white";
+    document.querySelector("#yellow").style.backgroundColor = "white";
+    document.querySelector("#blue").style.backgroundColor = "white";
+
     let index = 0;
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
         if (index < simonArr.length) {
             if (simonArr[index] === "green") {
-                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                document.querySelector("#green").style.backgroundColor = simonArr[index];
+                let colorInterval = setTimeout(function() {
+                    document.querySelector("#green").style.backgroundColor = "white";
+                }, 700);
                 audio0.play();
             }
             else if (simonArr[index] === "red") {
-                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                document.querySelector("#red").style.backgroundColor = simonArr[index];
+                let colorInterval = setTimeout(function() {
+                    document.querySelector("#red").style.backgroundColor = "white";
+                }, 700);
                 audio1.play();
             }
             else if (simonArr[index] === "yellow") {
-                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                document.querySelector("#yellow").style.backgroundColor = simonArr[index];
+                let colorInterval = setTimeout(function() {
+                    document.querySelector("#yellow").style.backgroundColor = "white";
+                }, 700);
                 audio2.play();
             }
             else if (simonArr[index] === "blue") {
-                document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
+                document.querySelector("#blue").style.backgroundColor = simonArr[index];
+                let colorInterval = setTimeout(function() {
+                    document.querySelector("#blue").style.backgroundColor = "white";
+                }, 700);
                 audio3.play();
             }
-            let whiteInterval = setTimeout(function() {
-                document.querySelector(".simon").style.backgroundColor = "white";
-            }, 700);
+            // let whiteInterval = setTimeout(function() {
+            //     document.querySelector(".simon").style.backgroundColor = "white";
+            // }, 700);
             index++
         }
         else if (index == simonArr.length) {
+            document.querySelector("#green").style.backgroundColor = "green";
+            document.querySelector("#red").style.backgroundColor = "red";
+            document.querySelector("#yellow").style.backgroundColor = "yellow";
+            document.querySelector("#blue").style.backgroundColor = "blue";
             clearInterval(interval);
         }
     }, 1000);
