@@ -89,22 +89,10 @@ let check = (a, b) => {
         notEqual = "false"
     } 
     else if (a.length === b.length && notEqual === "true") {
-        // for (let i = 0; i < simonArr.length; i++) {
-        //     if (simonArr[i] === playerArr[i]) {
-        //         i++
-        //     }
-        //     else {
                 document.querySelector("h1").textContent = "Incorrect. Start Over"
                 document.querySelector("h1").classList.remove("hideshow");
                 document.querySelector("#begin").textContent = "Retry";
                 document.querySelector("#begin").style.backgroundColor = "orange";
-        //     }
-        // }
-    }
-        // document.querySelector("h1").textContent = "Incorrect. Start Over"
-        // document.querySelector("h1").classList.remove("hideshow");
-        // document.querySelector("#begin").textContent = "Retry";
-        // document.querySelector("#begin").style.backgroundColor = "orange";
-    // }    
+    }   
 }
 
