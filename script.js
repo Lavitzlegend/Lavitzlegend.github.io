@@ -43,6 +43,7 @@ document.querySelector("#blue").addEventListener("click", function(e) {
 let nextRound = () => {
     document.querySelector("#begin").textContent = "playing...";
     document.querySelector("#begin").style.backgroundColor = "white";
+    document.querySelector("h1").style.backgroundColor = "white";
     document.querySelector("h1").classList.add("hideshow");
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
@@ -119,6 +120,7 @@ let check = (a, b) => {
     let notEqual = "true";
     if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
         document.querySelector("h1").textContent = "Correct!";
+        document.querySelector("h1").style.backgroundColor = "lightgreen";
         document.querySelector("h1").classList.remove("hideshow");
         let winWait = setTimeout(function() {
             nextRound();
@@ -127,9 +129,10 @@ let check = (a, b) => {
     } 
     else if (a.length === b.length && notEqual === "true") {
                 document.querySelector("h1").textContent = "Incorrect. Start Over"
+                document.querySelector("h1").style.backgroundColor = "red";
                 document.querySelector("h1").classList.remove("hideshow");
                 document.querySelector("#begin").textContent = "Retry";
-                document.querySelector("#begin").style.backgroundColor = "orange";
+                document.querySelector("#begin").style.backgroundColor = "lightgray";
     }
 }
 
