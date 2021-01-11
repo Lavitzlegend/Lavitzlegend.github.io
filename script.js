@@ -3,7 +3,7 @@ const simonArr = [];
 let playerArr = [];
 
 document.querySelector("#begin").addEventListener("click", function(e) {
-    document.body.querySelector("h1").textContent = ""
+    document.body.querySelector("h1").classList.add("hideshow");
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
@@ -53,5 +53,6 @@ let check = (a, b) => {
 }
 
 document.querySelector("#check").addEventListener("click", function(e) {
+    document.body.querySelector("h1").classList.remove("hideshow");
     check(simonArr, playerArr);
 })
