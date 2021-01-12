@@ -18,33 +18,33 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     border: black solid;
-    border-radius: 150px;
+    border-radius: 200px;
     overflow: auto;
     margin: 100px 47px 0 47px;
 }
 body {
-    max-width: 308px;
+    max-width: 508px;
     margin: auto;
 }
 #green {
     background-color: green;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 #red {
     background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 #yellow {
     background-color: yellow;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 #blue {
     background-color: blue;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 .simon {
     background-color: white;
