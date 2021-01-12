@@ -1,5 +1,7 @@
 let simonArr = [];
 let playerArr = [];
+let highScore = localStorage.getItem("score");     // found info on localStorage at https://stackoverflow.com/questions/29370017/adding-a-high-score-to-local-storage
+
 const audio0 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3") // Figured out how to add sounds from here https://stackoverflow.com/questions/9419263/how-to-play-audio
 const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3") // found some free hosted mp3s from the medium article https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
 const audio2 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3")
@@ -122,11 +124,17 @@ let check = (a, b) => {
         notEqual = "false"
     } 
     else if (a.length === b.length && notEqual === "true") {
-                document.querySelector("h1").textContent = "Incorrect. Start Over"
-                document.querySelector("h1").style.backgroundColor = "red";
-                document.querySelector("h1").classList.remove("hideshow");
-                document.querySelector("#begin").textContent = "Retry";
-                document.querySelector("#begin").style.backgroundColor = "lightgreen";
+        document.querySelector("h1").textContent = "Incorrect. Start Over"
+        document.querySelector("h1").style.backgroundColor = "red";
+        document.querySelector("h1").classList.remove("hideshow");
+        document.querySelector("#begin").textContent = "Retry";
+        document.querySelector("#begin").style.backgroundColor = "lightgreen";
+        if (highscore !== null) {
+            if (simonArr.length > highScore) {
+                localStorage.setItem("score", simonArr.length);
+                
+            }
+        }
     }
 }
 
