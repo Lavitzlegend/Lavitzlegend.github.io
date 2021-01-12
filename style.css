@@ -101,9 +101,20 @@ h3 {
 .modal {
     display: none;
     background: purple;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-content: space-evenly;
 }
 .form-container {
     display: flex;
+    align-content: space-evenly;
     justify-content: space-evenly;
+}
+#highText {
+    margin: 0 10px 0 10;
+}
+#user {
+    margin: 0 10px 0 10;
+}
+.btn {
+    margin: 0 10px 0 10;
 }
