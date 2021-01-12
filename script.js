@@ -69,7 +69,6 @@ let nextRound = () => {
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
         if (index < simonArr.length) {
             if (simonArr[index] === "green") {
-                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
                 document.querySelector("#green").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#green").style.backgroundColor = "white";
@@ -77,7 +76,6 @@ let nextRound = () => {
                 audio0.play();
             }
             else if (simonArr[index] === "red") {
-                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
                 document.querySelector("#red").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#red").style.backgroundColor = "white";
@@ -85,7 +83,6 @@ let nextRound = () => {
                 audio1.play();
             }
             else if (simonArr[index] === "yellow") {
-                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
                 document.querySelector("#yellow").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#yellow").style.backgroundColor = "white";
@@ -93,16 +90,12 @@ let nextRound = () => {
                 audio2.play();
             }
             else if (simonArr[index] === "blue") {
-                // document.querySelector(".simon").style.backgroundColor = simonArr[index];
                 document.querySelector("#blue").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#blue").style.backgroundColor = "white";
                 }, 700);
                 audio3.play();
             }
-            // let whiteInterval = setTimeout(function() {
-            //     document.querySelector(".simon").style.backgroundColor = "white";
-            // }, 700);
             index++
         }
         else if (index == simonArr.length) {
