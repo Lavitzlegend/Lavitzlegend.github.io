@@ -1,7 +1,15 @@
 h1 {
     text-align: center;
+    color: #bbbbbb;
 }
-.heading {
+heading {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-family: 'Permanent Marker', cursive;
+    color: #aaaaaa;
+}
+.buttons {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
@@ -25,6 +33,7 @@ h1 {
 body {
     max-width: 508px;
     margin: auto;
+    background: #454545;
 }
 #green {
     background-color: green;

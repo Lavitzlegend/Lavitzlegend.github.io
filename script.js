@@ -42,8 +42,9 @@ document.querySelector("#blue").addEventListener("click", function(e) {
 // Next Round and Check function definitions
 let nextRound = () => {
     document.querySelector("#begin").textContent = "playing...";
-    document.querySelector("#begin").style.backgroundColor = "white";
-    document.querySelector("h1").style.backgroundColor = "white";
+    document.querySelector("#begin").style.backgroundColor = "#454545";
+    document.querySelector("h1").style.backgroundColor = "#454545";
+    document.querySelector("h1").style.color = "#454545";
     document.querySelector("h1").classList.add("hideshow");
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
@@ -60,10 +61,10 @@ let nextRound = () => {
         simonArr.push("blue");
     }
 
-    document.querySelector("#green").style.backgroundColor = "white";
-    document.querySelector("#red").style.backgroundColor = "white";
-    document.querySelector("#yellow").style.backgroundColor = "white";
-    document.querySelector("#blue").style.backgroundColor = "white";
+    document.querySelector("#green").style.backgroundColor = "#aaaaaa";
+    document.querySelector("#red").style.backgroundColor = "#aaaaaa";
+    document.querySelector("#yellow").style.backgroundColor = "#aaaaaa";
+    document.querySelector("#blue").style.backgroundColor = "#aaaaaa";
 
     let index = 0;
     let interval = setInterval(function() {           // Learned about setInterval and setTimeout from https://www.w3schools.com/js/js_timing.asp
@@ -71,28 +72,28 @@ let nextRound = () => {
             if (simonArr[index] === "green") {
                 document.querySelector("#green").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
-                    document.querySelector("#green").style.backgroundColor = "white";
+                    document.querySelector("#green").style.backgroundColor = "#aaaaaa";
                 }, 700);
                 audio0.play();
             }
             else if (simonArr[index] === "red") {
                 document.querySelector("#red").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
-                    document.querySelector("#red").style.backgroundColor = "white";
+                    document.querySelector("#red").style.backgroundColor = "#aaaaaa";
                 }, 700);
                 audio1.play();
             }
             else if (simonArr[index] === "yellow") {
                 document.querySelector("#yellow").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
-                    document.querySelector("#yellow").style.backgroundColor = "white";
+                    document.querySelector("#yellow").style.backgroundColor = "#aaaaaa";
                 }, 700);
                 audio2.play();
             }
             else if (simonArr[index] === "blue") {
                 document.querySelector("#blue").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
-                    document.querySelector("#blue").style.backgroundColor = "white";
+                    document.querySelector("#blue").style.backgroundColor = "#aaaaaa";
                 }, 700);
                 audio3.play();
             }
@@ -106,12 +107,12 @@ let nextRound = () => {
             clearInterval(interval);
         }
     }, 1000);
-    console.log(simonArr);    
+    // console.log(simonArr);    
 }
 
 let check = (a, b) => {
     let notEqual = "true";
-    if (a.length === b.length && a.every((v, i) => v === b[i])) { // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
+    if (a.length === b.length && a.every((v, i) => v === b[i])) {       // found an efficient method for comparing 2 arrays at this URL: https://www.30secondsofcode.org/blog/s/javascript-array-comparison
         document.querySelector("h1").textContent = "Correct!";
         document.querySelector("h1").style.backgroundColor = "lightgreen";
         document.querySelector("h1").classList.remove("hideshow");
@@ -125,7 +126,7 @@ let check = (a, b) => {
                 document.querySelector("h1").style.backgroundColor = "red";
                 document.querySelector("h1").classList.remove("hideshow");
                 document.querySelector("#begin").textContent = "Retry";
-                document.querySelector("#begin").style.backgroundColor = "lightgray";
+                document.querySelector("#begin").style.backgroundColor = "lightgreen";
     }
 }
 
