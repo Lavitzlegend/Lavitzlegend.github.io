@@ -1,6 +1,9 @@
 let simonArr = [];
 let playerArr = [];
 let highScore = localStorage.getItem("score");     // found info on localStorage at https://stackoverflow.com/questions/29370017/adding-a-high-score-to-local-storage
+document.querySelector(".highscore").querySelector("p").textContent = `${localStorage.getItem("score")} - ${localStorage.getItem("name")}`
+
+// localStorage.setItem("score", 0)
 
 const audio0 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3") // Figured out how to add sounds from here https://stackoverflow.com/questions/9419263/how-to-play-audio
 const audio1 = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3") // found some free hosted mp3s from the medium article https://medium.com/front-end-weekly/create-simon-game-in-javascript-d53b474a7416
@@ -48,6 +51,7 @@ let nextRound = () => {
     document.querySelector("h1").style.backgroundColor = "#454545";
     document.querySelector("h1").style.color = "#454545";
     document.querySelector("h1").classList.add("hideshow");
+    document.querySelector(".modal").style.display = "none";
     playerArr = [];
     let color = Math.floor(Math.random() * 4) + 1;
     if (color == 1) {
@@ -75,28 +79,28 @@ let nextRound = () => {
                 document.querySelector("#green").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#green").style.backgroundColor = "#aaaaaa";
-                }, 700);
+                }, 500);
                 audio0.play();
             }
             else if (simonArr[index] === "red") {
                 document.querySelector("#red").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#red").style.backgroundColor = "#aaaaaa";
-                }, 700);
+                }, 500);
                 audio1.play();
             }
             else if (simonArr[index] === "yellow") {
                 document.querySelector("#yellow").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#yellow").style.backgroundColor = "#aaaaaa";
-                }, 700);
+                }, 500);
                 audio2.play();
             }
             else if (simonArr[index] === "blue") {
                 document.querySelector("#blue").style.backgroundColor = simonArr[index];
                 let colorInterval = setTimeout(function() {
                     document.querySelector("#blue").style.backgroundColor = "#aaaaaa";
-                }, 700);
+                }, 500);
                 audio3.play();
             }
             index++
@@ -108,7 +112,7 @@ let nextRound = () => {
             document.querySelector("#blue").style.backgroundColor = "blue";
             clearInterval(interval);
         }
-    }, 1000);
+    }, 700);
     // console.log(simonArr);    
 }
 
@@ -129,12 +133,28 @@ let check = (a, b) => {
         document.querySelector("h1").classList.remove("hideshow");
         document.querySelector("#begin").textContent = "Retry";
         document.querySelector("#begin").style.backgroundColor = "lightgreen";
-        if (highscore !== null) {
-            if (simonArr.length > highScore) {
-                localStorage.setItem("score", simonArr.length);
+        if (highScore !== null) {
+            if ((simonArr.length - 1) > highScore) {
+                localStorage.setItem("score", (simonArr.length - 1));
+                document.querySelector(".modal").style.display = "flex";
+                // console.log(localStorage.getItem("name"));
+                // console.log(localStorage.getItem("score"));
                 
+                // document.querySelector(".highscore").querySelector("p").textContent = `${localStorage.getItem("score")} - ${localStorage.getItem("name")}` 
             }
+        }
+        else {
+            localStorage.setItem("score", 0);
+            localStorage.setItem("name", "crickets");
         }
     }
 }
-
+console.log(localStorage.getItem("name"));
+console.log(localStorage.getItem("score"));
+// console.log(highScore);
+document.querySelector(".form-container").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let userName = document.querySelector("#user").value;
+    localStorage.setItem("name", userName);
+    document.querySelector(".highscore").querySelector("p").textContent = `${localStorage.getItem("score")} - ${localStorage.getItem("name")}`
+})
