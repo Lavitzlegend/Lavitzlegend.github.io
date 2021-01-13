@@ -39,5 +39,5 @@ I achieve the Minimum Viable Product as well as all of my stretch goals. The onl
 
 However, I had some additional ideas come up as I was coding. Adding functionality for a "difficulty" setting that can speed up or slow down the game would be nice. Also, getting the highscores form to be a popup instead of just displaying on the page would be nice.
 
-## Game Screen
+## Game Screenshot
 [Screenshot Link](https://lavitzlegend.github.io/SimonSaysProject1.png)
