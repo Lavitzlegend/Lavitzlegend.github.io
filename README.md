@@ -1,4 +1,4 @@
-# project-1   Simon-Says
+# Project 1 - Simon-Says
 
 [Game Link](https://lavitzlegend.github.io/)
 
