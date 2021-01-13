@@ -2,7 +2,7 @@
 
 [Game Link](https://lavitzlegend.github.io/)
 
-<img src=“https://raw.githubusercontent.com/Lavitzlegend/Lavitzlegend.github.io/master/SimonSaysProject1.png>
+![SimonSaysProject1](https://user-images.githubusercontent.com/74753181/104479248-d2792500-5588-11eb-8751-1ab814fca0e7.png)
 
 ## Preview
 
@@ -40,6 +40,3 @@ If the player creates an array that is the same length as Simon but doesn't have
 I achieve the Minimum Viable Product as well as all of my stretch goals. The only issue I see currently that can be a little confusing to the player is that if you are doing the same color twice in a row, if the user clicks too quickly you will only hear the sound for that color play once even though the player array has received 2 values. 
 
 However, I had some additional ideas come up as I was coding. Adding functionality for a "difficulty" setting that can speed up or slow down the game would be nice. Also, getting the highscores form to be a popup instead of just displaying on the page would be nice.
-
-<!-- ## Game Screenshot
-[Screenshot Link](https://lavitzlegend.github.io/SimonSaysProject1.png) -->
