@@ -2,6 +2,8 @@
 
 [Game Link](https://lavitzlegend.github.io/)
 
+<img src=“https://github.com/Lavitzlegend/Lavitzlegend.github.io/main/SimonSaysProject1.png”>
+
 ## Preview
 
 This is my take on the Simon Says memory game/toy.
@@ -39,5 +41,5 @@ I achieve the Minimum Viable Product as well as all of my stretch goals. The onl
 
 However, I had some additional ideas come up as I was coding. Adding functionality for a "difficulty" setting that can speed up or slow down the game would be nice. Also, getting the highscores form to be a popup instead of just displaying on the page would be nice.
 
-## Game Screenshot
-[Screenshot Link](https://lavitzlegend.github.io/SimonSaysProject1.png)
+<!-- ## Game Screenshot
+[Screenshot Link](https://lavitzlegend.github.io/SimonSaysProject1.png) -->
