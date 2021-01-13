@@ -2,7 +2,7 @@
 
 [Game Link](https://lavitzlegend.github.io/)
 
-<img src=“https://raw.githubusercontent.com/Lavitzlegend/Lavitzlegend.github.io/master/SimonSaysProject1.png>
+<img src=“Lavitzlegend.github.io/SimonSaysProject1.png">
 
 ## Preview
 
